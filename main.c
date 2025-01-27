@@ -1,7 +1,12 @@
 #include <ncurses.h>
+#include <stdio.h>
+#include <string.h>
+#include "sign_up.c"
+
 int signup_login_menu()
 {
-    initscr();                
+    initscr();
+    clear();              
     cbreak();                 
     noecho();                 
     keypad(stdscr, TRUE);     
@@ -49,6 +54,15 @@ int signup_login_menu()
 }
 int main() 
 {
-    ifsignup_login_menu();
+    int choise = signup_login_menu();
+    if(choise == 0)
+    {
+        
+    }
+    else if(choise == 1)
+    {
+        sign_up_page();
+        main();
+    }
     return 0;
 }
